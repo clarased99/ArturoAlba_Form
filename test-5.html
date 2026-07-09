@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 5 — La Fórmula del Saber | Arturo Alba</title>
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="quiz quiz--q5" data-question="5">
 
+<a href="index.html" class="quiz__restart">
+    <span class="quiz__restart-arrow" aria-hidden="true">←</span>
+    <span>Volver a empezar</span>
+</a>
+
+<div class="quiz__panel quiz__panel--visual">
+    <img
+            src="assets/images/test-5-normocorrectora.png"
+            alt="Mascarilla Normo Correctora, Arturo Alba"
+            class="quiz__visual-image">
+</div>
+
+<main class="quiz__panel quiz__panel--question">
+    <div class="quiz__content">
+        <h1 class="quiz__question">¿Para qué tipo de piel está destinada la MASCARILLA NORMO CORRECTORA?</h1>
+
+        <ul class="quiz__options" role="listbox" aria-label="Opciones de respuesta">
+            <li role="presentation">
+                <button type="button" class="quiz__option" data-value="A" role="option" aria-selected="false">
+                    <span class="quiz__option-icon" aria-hidden="true">→</span>
+                    <span class="quiz__option-text">Pieles grasas, porque seborregula</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="quiz__option" data-value="B" role="option" aria-selected="false">
+                    <span class="quiz__option-icon" aria-hidden="true">→</span>
+                    <span class="quiz__option-text">Pieles secas, porque no da tirantez y reconforta</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="quiz__option" data-value="C" role="option" aria-selected="false">
+                    <span class="quiz__option-icon" aria-hidden="true">→</span>
+                    <span class="quiz__option-text">Ojeras, porque descongestiona</span>
+                </button>
+            </li>
+            <li role="presentation">
+                <button type="button" class="quiz__option" data-value="D" role="option" aria-selected="false">
+                    <span class="quiz__option-icon" aria-hidden="true">→</span>
+                    <span class="quiz__option-text">Todas son correctas</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <a href="z-final.html" class="quiz__next" id="nextBtn" aria-disabled="true">
+        <span>VER RESULTADOS</span>
+        <span class="quiz__next-arrow" aria-hidden="true">→</span>
+    </a>
+</main>
+
+<script src="js/quiz.js"></script>
 </body>
 </html>
