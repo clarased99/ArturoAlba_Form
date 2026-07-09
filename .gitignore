@@ -1,0 +1,40 @@
+# Dependencias
+/vendor/
+/node_modules/
+
+# Composer
+composer.phar
+composer.lock
+
+# Variables de entorno / credenciales
+.env
+.env.local
+.env.*.local
+config.local.php
+
+# Logs
+*.log
+error_log
+
+# Cache
+/cache/
+*.cache
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / output
+/dist/
+/build/
+/.vercel/
+
+# Sesiones PHP
+sess_*
