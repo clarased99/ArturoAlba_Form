@@ -194,12 +194,12 @@ body.landing {
 @media (max-width: 600px) {
     html:has(body.landing),
     body.landing {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
         height: auto;
         min-height: 100vh;
         min-height: 100svh;
         overflow-y: auto;
-        flex-direction: column;
-        justify-content: space-between;
     }
 
     .landing__text {
@@ -210,10 +210,15 @@ body.landing {
         top: -3vw;
     }
 
+    .landing__center {
+        grid-row: 2;
+    }
+
     .landing__text--bottom {
-        position: relative;
-        bottom: auto;
-        padding-bottom: 2rem;
+        grid-row: 3;
+        align-self: end;
+        position: static;
+        padding-bottom: 1.5rem;
     }
 
     .landing__brand {
@@ -222,11 +227,10 @@ body.landing {
 
     .landing__center {
         gap: 0.75rem;
-        padding-top: 6rem;
     }
 
     .landing__logo {
-        width: 70px;
+        width: 65px;
     }
 
     .landing__cta {
