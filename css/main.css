@@ -218,6 +218,7 @@ body.landing {
         grid-row: 3;
         align-self: end;
         position: static;
+        transform: none;
         padding-bottom: 1.5rem;
     }
 
