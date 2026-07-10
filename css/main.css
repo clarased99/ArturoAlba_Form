@@ -1,4 +1,3 @@
-
 /* =============================================
    RESET BÁSICO
    (colocar SIEMPRE al principio de main.css)
@@ -8,19 +7,6 @@
 *::after {
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =============================================
    FUENTES DE MARCA
@@ -151,7 +137,7 @@ body.landing {
 .landing__brand {
     margin: 0.3rem;
     font-family: "Optima", serif;
-    font-size: clamp(4rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
     color: #ffffff;
 }
 
@@ -202,25 +188,32 @@ body.landing {
     }
 }
 
-/* Móvil: reducimos algo el tamaño del texto de márgenes para que no monopolice la pantalla */
+/* Móvil: marca más grande, botón más pequeño, y usamos altura de
+   viewport dinámica (dvh) para que "DEL SABER" no quede fuera del
+   área realmente visible en navegadores móviles */
 @media (max-width: 600px) {
-    .landing__text {
-        font-size: clamp(2.8rem, 16vw, 5rem);
+    html:has(body.landing),
+    body.landing {
+        height: 100dvh;
     }
+
+    .landing__text {
+        font-size: clamp(2.4rem, 15vw, 4rem);
+    }
+
     .landing__brand {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+    }
+
+    .landing__center {
+        gap: 1rem;
+    }
+
+    .landing__cta {
+        margin-top: 1.5rem;
+        font-size: 1rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* =============================================
    QUIZ — LAYOUT COMPARTIDO (test-1.html … test-5.html)
@@ -558,6 +551,10 @@ body.quiz--full .quiz__restart {
         overflow-y: visible;
     }
 
+    .quiz__question {
+        font-size: 1.4rem;
+    }
+
     .quiz__restart {
         top: 1.25rem;
         left: 1.25rem;
@@ -565,7 +562,7 @@ body.quiz--full .quiz__restart {
 
     .quiz__panel--full {
         height: auto;
-        padding: 2rem 1.75rem 2.5rem;
+        padding: 5.5rem 1.75rem 2.5rem;
     }
 
     .quiz__full-inner {
@@ -577,25 +574,11 @@ body.quiz--full .quiz__restart {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
+    .quiz__image-option-label {
+        font-size: 0.85rem;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =============================================
    RESULTADOS — z-final.html
@@ -898,7 +881,46 @@ body.results {
     .results__summary {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 1.5rem;
+        gap: 0.75rem;
+    }
+
+    /* "Desenvuelve" el bloque de puntuación para poder reordenar
+       sus elementos junto con el título y el mensaje */
+    .results__score {
+        display: contents;
+    }
+
+    .results__title {
+        order: 1;
+        font-size: 1.4rem;
+    }
+
+    .results__score-lead {
+        order: 2;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+
+    .results__score-number {
+        order: 3;
+        font-size: clamp(3rem, 16vw, 4rem);
+        margin: 0;
+    }
+
+    .results__score-sub {
+        order: 4;
+        font-size: 1.1rem;
+    }
+
+    .results__message {
+        order: 5;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+
+    .results__see-answers {
+        order: 6;
+        margin-top: 1.5rem;
     }
 
     .results__title,
