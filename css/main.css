@@ -86,7 +86,7 @@ body.landing {
     text-align: center;
     font-family: "Optima", serif;
     font-weight: 400;
-    font-size: clamp(3.5rem, 13vw, 10rem);
+    font-size: clamp(3.5rem, min(13vw, 16vh), 10rem);
     letter-spacing: 0.04em;
     color: #ffffff;
     line-height: 1;
@@ -636,7 +636,7 @@ body.results {
     text-align: center;
     font-family: "Optima", serif;
     font-weight: 400;
-    font-size: clamp(3.5rem, 13vw, 10rem);
+    font-size: clamp(3.5rem, min(13vw, 16vh), 10rem);
     letter-spacing: 0.04em;
     color: #ffffff;
     line-height: 1;
@@ -646,11 +646,11 @@ body.results {
 }
 
 .results__margin-text--top {
-    top: calc(-0.5 * clamp(3.5rem, 13vw, 10rem));
+    top: -3vw;
 }
 
 .results__margin-text--bottom {
-    bottom: calc(-0.5 * clamp(3.5rem, 13vw, 10rem));
+    bottom: -3vw;
 }
 
 .results__side-label {
