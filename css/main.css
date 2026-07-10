@@ -194,11 +194,9 @@ body.landing {
 @media (max-width: 600px) {
     html:has(body.landing),
     body.landing {
-        height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
-        overflow-y: auto;
-        flex-direction: column;
+        height: 100vh;
+        height: 100svh;
+        overflow: hidden;
     }
 
     .landing__text {
@@ -206,26 +204,24 @@ body.landing {
     }
 
     .landing__text--top {
-        top: 1rem;
+        top: -3vw;
     }
 
     .landing__text--bottom {
-        position: relative;
-        bottom: auto;
-        margin-top: 2rem;
+        bottom: -3vw;
     }
 
     .landing__brand {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 
     .landing__center {
         gap: 0.75rem;
-        padding: 8rem 2rem 2rem;
+        padding: 0 2rem;
     }
 
     .landing__logo {
-        width: 100px;
+        width: 80px;
     }
 
     .landing__cta {
@@ -660,11 +656,11 @@ body.results {
 }
 
 .results__margin-text--top {
-    top: -3vw;
+    top: -6vw;
 }
 
 .results__margin-text--bottom {
-    bottom: -3vw;
+    bottom: -6vw;
 }
 
 .results__side-label {
@@ -704,7 +700,8 @@ body.results {
 }
 
 .results__title {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 20rem;
     font-family: "Optima", serif;
     font-size: 2.2rem;
     letter-spacing: normal;
@@ -760,7 +757,8 @@ body.results {
 }
 
 .results__message {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 20rem;
     font-family: "Optima", serif;
     font-size: 1.5rem;
     letter-spacing: normal;
@@ -912,6 +910,7 @@ body.results {
 
     .results__title {
         order: 1;
+        max-width: none;
         font-size: 1.4rem;
     }
 
@@ -934,6 +933,7 @@ body.results {
 
     .results__message {
         order: 5;
+        max-width: none;
         font-size: 1.1rem;
         margin-top: 0.5rem;
     }
