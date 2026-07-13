@@ -1,3 +1,4 @@
+
 /* =============================================
    RESET BÁSICO
    (colocar SIEMPRE al principio de main.css)
@@ -216,6 +217,8 @@ body.landing {
         grid-row: 3;
         align-self: end;
         position: static;
+        animation: none;
+        opacity: 1;
         transform: none;
         padding-bottom: 1.5rem;
     }
