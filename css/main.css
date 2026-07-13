@@ -755,7 +755,7 @@ body.results {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 1.75rem;
+    margin-top: 3rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
