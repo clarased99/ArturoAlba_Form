@@ -44,7 +44,6 @@
 /* =============================================
    LANDING — LA FÓRMULA DEL SABER
 ============================================= */
-html:has(body.landing),
 body.landing {
     height: 100%;
     margin: 0;
@@ -192,7 +191,6 @@ body.landing {
    viewport dinámica (dvh) para que "DEL SABER" no quede fuera del
    área realmente visible en navegadores móviles */
 @media (max-width: 600px) {
-    html:has(body.landing),
     body.landing {
         display: grid;
         grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
