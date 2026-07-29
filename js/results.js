@@ -3,10 +3,10 @@
 
     /* Mensajes de marca según nº de aciertos (0 a 5) */
     var MESSAGES = [
-        { title: "El primer paso", text: "Todo ritual de conocimiento empieza por descubrir. Aún no conoces los secretos de Arturo Alba, pero cada fórmula tiene su ciencia y cada ciencia, su momento de aprendizaje." },
-        { title: "Una gota de precisión", text: "La piel guarda más secretos de los que imaginas y Arturo Alba, la ciencia para descifrarlos." },
-        { title: "El umbral del conocimiento", text: "Empiezas a intuir la lógica detrás de cada activo. Un poco más de tiempo y la fórmula se revelará por completo." },
-        { title: "Afinando el instinto", text: "Tu mirada ya distingue lo esencial. Estás a medio camino entre la intuición y la maestría que exige la ciencia del rejuvenecimiento." },
+        { title: "El primer paso de la fórmula", text: "Todo ritual de conocimiento empieza por descubrir. Aún no conoces los secretos de Arturo Alba, pero cada fórmula tiene su ciencia — y cada ciencia, su momento de aprenderse." },
+        { title: "Una gota de precisión", text: "Has rozado la superficie de la fórmula. La piel guarda más secretos de los que imaginas — y Arturo Alba, la ciencia para descifrarlos." },
+        { title: "El umbral del conocimiento", text: "Empiezas a intuir la lógica detrás de cada activo. Un poco más de atención y la fórmula se revelará por completo." },
+        { title: "Afinando el instinto", text: "Tu mirada ya distingue lo esencial. Estás a medio camino entre la intuición y la maestría que exige esta ciencia del rejuvenecimiento." },
         { title: "Casi maestría", text: "Conoces la fórmula casi tan bien como quien la creó. Solo un detalle te separa de dominar por completo el lenguaje de Arturo Alba." },
         { title: "Maestría absoluta", text: "Dominas la ciencia y el arte que hay detrás de cada fórmula. Tu conocimiento está a la altura de la propia filosofía Arturo Alba." }
     ];
@@ -20,6 +20,7 @@
     }
 
     var blocks = document.querySelectorAll(".results__question-block");
+    var total = blocks.length;
     var score = 0;
 
     blocks.forEach(function (block) {
@@ -46,13 +47,23 @@
         if (isCorrectAnswer) score++;
     });
 
-    var msg = MESSAGES[score] || MESSAGES[0];
+    /* Escala la puntuación (0..total) al rango de mensajes disponibles
+       (0..MESSAGES.length-1), para que MESSAGES no dependa del número
+       exacto de preguntas del test. Con 5 preguntas y 6 mensajes esto
+       coincide exactamente (mapeo 1 a 1); con 6 preguntas, por ejemplo,
+       3/6 y 4/6 comparten el mismo mensaje que antes le correspondía a 3/5. */
+    var messageIndex = total > 0
+        ? Math.round((score / total) * (MESSAGES.length - 1))
+        : 0;
+    var msg = MESSAGES[messageIndex] || MESSAGES[0];
 
     var scoreEl = document.getElementById("scoreValue");
+    var totalEl = document.getElementById("totalQuestions");
     var titleEl = document.getElementById("resultTitle");
     var messageEl = document.getElementById("resultMessage");
 
     if (scoreEl) scoreEl.textContent = score;
+    if (totalEl) totalEl.textContent = total;
     if (titleEl) titleEl.textContent = msg.title;
     if (messageEl) messageEl.textContent = msg.text;
 })();
