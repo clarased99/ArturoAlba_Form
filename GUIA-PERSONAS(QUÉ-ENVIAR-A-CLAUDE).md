@@ -20,7 +20,7 @@ Adjunta estos 4 archivos y pega esto:
 
 **Archivos a adjuntar:**
 - `README.md`
-- `CÓMO-AÑADIR-UNA-PREGUNTA.md`
+- `PARA-CLAUDE.md`
 - `test-[última pregunta actual].html` (ej. `test-5.html`)
 - `z-final.html`
 
